@@ -51,11 +51,3 @@ function testInput() {
 		console.log(validPassports);
 	});
 }
-
-// function testBirthYear(input) {
-//  	return /byr:(\d{4})/.test(input) && input.match(/byr:(\d{4})(\s|\n|$)/)[1] >= 1920 && input.match(/byr:(\d{4})(\s|\n|$)/)[1] <= 2002;
-// }
-
-// module.exports = {
-// 	testBirthYear
-// };
