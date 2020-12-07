@@ -34,27 +34,17 @@ const input = require('../input.json');
 		}
 	});
 
+	console.log(getBagCount(collection['shiny gold'].bags));
 
-	let canContainEventually = 0;
-	for(let rule in collection) {
-		if(canContainShinyGold(collection[rule].bags)) {
-			canContainEventually++;
-		}
-	}
-	console.log(canContainEventually);
-
-	function canContainShinyGold(bags) {
-
+	function getBagCount(bags) {
+		let count = 0;
 		for(let bag of bags) {
-			if(bag.name === 'shiny gold') {
-				return true;
-			}
-			const can = canContainShinyGold(collection[bag.name].bags);
-			if (can) {
-				return true;
+			count += parseInt(bag.qty);
+			if(collection[bag.name].bags.length) {
+				count += parseInt(bag.qty) * getBagCount(collection[bag.name].bags);
 			}
 		}
-		return false;
+		return count;
 	}
 })();
 
