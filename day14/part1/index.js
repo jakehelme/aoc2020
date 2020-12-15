@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 (function(){
-    // fs.readFile(path.resolve(__dirname, '../example.txt'), 'utf8', start);
-    fs.readFile(path.resolve(__dirname, '../input.txt'), 'utf8', start);
+    fs.readFile(path.resolve(__dirname, './example.txt'), 'utf8', start);
+    // fs.readFile(path.resolve(__dirname, '../input.txt'), 'utf8', start);
     
     function start(err, data) {
         if (err) throw new Error('na ah');
